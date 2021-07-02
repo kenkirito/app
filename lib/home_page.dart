@@ -8,11 +8,13 @@ class Homepage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("i like building apps in flutter"),
+        title: Center(
+          child: Text("Catalog app"),
+        ),
       ),
       body: Center(
         child: Container(
-          child: Text("welcome to $days  days flutter by $name"),
+          child: Text(" $days  days flutter by $name"),
         ),
       ),
       drawer: Drawer(),
