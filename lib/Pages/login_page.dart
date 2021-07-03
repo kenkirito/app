@@ -8,10 +8,10 @@ class LoginPage extends StatelessWidget {
         child: Text(
           "LoginPage",
           style: TextStyle(
-            fontSize: 40,
             color: Colors.blue,
             fontWeight: FontWeight.bold,
           ),
+          textScaleFactor: 6.0,
         ),
       ),
     );
