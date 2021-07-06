@@ -53,13 +53,12 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(
                   height: 20.0,
                 ),
-                ElevatedButton(
+                Container(
+                  width: 100,
+                  height: 50,
+                  color: Colors.deepPurple,
                   child: Text("Login"),
-                  style: TextButton.styleFrom(minimumSize: Size(100, 40)),
-                  onPressed: () {
-                    Navigator.pushNamed(context, MyRoutes.homeRoute);
-                  },
-                )
+                ),
               ],
             ),
           )
