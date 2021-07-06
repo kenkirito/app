@@ -52,16 +52,24 @@ class _LoginPageState extends State<LoginPage> {
                       hintText: "Enter password", labelText: "Password"),
                 ),
                 SizedBox(
-                  height: 20.0,
+                  height: 30.0,
                 ),
-                Container(
-                  width: 100,
-                  height: 50,
-                  color: Colors.deepPurple,
-                  child: Text(
-                    "Login",
-                    style: TextStyle(
-                        color: Colors.white, fontWeight: FontWeight.bold),
+                InkWell(
+                  Container(
+                    width: 100,
+                    height: 50,
+                    alignment: Alignment.center,
+                    child: Text(
+                      "Login",
+                      style: TextStyle(
+                        color: Colors.white,
+                        fontWeight: FontWeight.bold,
+                        fontSize: 15,
+                      ),
+                    ),
+                    decoration: BoxDecoration(
+                        color: Colors.deepPurple,
+                        borderRadius: BorderRadius.circular(10)),
                   ),
                 ),
               ],
