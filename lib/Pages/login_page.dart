@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_app/utils/routes.dart';
 
 class LoginPage extends StatefulWidget {
@@ -57,7 +58,11 @@ class _LoginPageState extends State<LoginPage> {
                   width: 100,
                   height: 50,
                   color: Colors.deepPurple,
-                  child: Text("Login"),
+                  child: Text(
+                    "Login",
+                    style: TextStyle(
+                        color: Colors.white, fontWeight: FontWeight.bold),
+                  ),
                 ),
               ],
             ),
