@@ -32,10 +32,14 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        "Catalog App".text.make(),
-      ],
+        body: SafeArea(
+      child: Container(
+        child: Column(
+          children: [
+            "Catalog App".text.make(),
+          ],
+        ),
+      ),
     ));
   }
 }
