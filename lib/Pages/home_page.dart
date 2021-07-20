@@ -1,10 +1,12 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'dart:convert';
-import 'package:flutter_app/Pages/models/catalog.dart';
-import 'package:flutter_app/widge/drawer.dart';
-import 'package:flutter_app/widge/item_widget.dart';
+import 'package:flutter_app/widge/theme.dart';
+
 import 'package:velocity_x/velocity_x.dart';
+
+import 'package:flutter_app/Pages/models/catalog.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -33,13 +35,36 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: Container(
-        child: Column(
-          children: [
-            "Catalog App".text.make(),
-          ],
-        ),
+      child: Container(padding: Vx.m32, 
+      child: CatalogHeader(),[
+      if(CatalogModel.items.isEmpty)
+        CatalogList()
+        else
+        Center(child: CircularProgressIndicator(),
+        )
+      ]
       ),
     ));
+  }
+}
+
+class CatalogHeader extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        "Catalog App".text.xl5.bold.color(MyTheme.darkBluishColor).make(),
+        "Trending Products".text.xl2.make(),
+      ],
+    );
+  }
+}
+
+
+class CatalogList extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
   }
 }
