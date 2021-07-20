@@ -35,14 +35,11 @@ class _HomepageState extends State<Homepage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: SafeArea(
-      child: Container(padding: Vx.m32, 
-      child: CatalogHeader(),[
-      if(CatalogModel.items.isEmpty)
-        CatalogList()
-        else
-        Center(child: CircularProgressIndicator(),
-        )
-      ]
+      child: Container(
+        padding: Vx.m32,
+        child: Column(
+          children: [CatalogHeader()],
+        ),
       ),
     ));
   }
@@ -60,7 +57,6 @@ class CatalogHeader extends StatelessWidget {
     );
   }
 }
-
 
 class CatalogList extends StatelessWidget {
   @override
