@@ -33,22 +33,23 @@ class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: MyTheme.creamColor,
         body: SafeArea(
-      child: Container(
-        padding: Vx.m32,
-        child: Column(
-          children: [
-            CatalogHeader(),
-            if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
-              CatalogList()
-            else
-              Center(
-                child: CircularProgressIndicator(),
-              )
-          ],
-        ),
-      ),
-    ));
+          child: Container(
+            padding: Vx.m32,
+            child: Column(
+              children: [
+                CatalogHeader(),
+                if (CatalogModel.items.isNotEmpty)
+                  CatalogList().expand()
+                else
+                  Center(
+                    child: CircularProgressIndicator(),
+                  )
+              ],
+            ),
+          ),
+        ));
   }
 }
 
@@ -69,6 +70,7 @@ class CatalogList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListView.builder(
+      shrinkWrap: true,
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
         final catalog = CatalogModel.items[index];
@@ -88,6 +90,14 @@ class CatalogItem extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return VxBox().white.square(100).make();
+    return VxBox(
+      child: Row(
+        children: [
+          Image.network(
+            catalog.image,
+          ).box.rounded.p8.color(MyTheme.creamColor).make().p24().w40(context)
+        ],
+      ),
+    ).white.rounded.square(130).make().py16();
   }
 }
