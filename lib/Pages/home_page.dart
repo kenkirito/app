@@ -2,11 +2,10 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_app/widge/theme.dart';
-
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:flutter_app/Pages/models/catalog.dart';
+import 'package:flutter_app/widge/theme.dart';
 
 class Homepage extends StatefulWidget {
   @override
@@ -38,7 +37,15 @@ class _HomepageState extends State<Homepage> {
       child: Container(
         padding: Vx.m32,
         child: Column(
-          children: [CatalogHeader()],
+          children: [
+            CatalogHeader(),
+            if (CatalogModel.items != null && CatalogModel.items.isNotEmpty)
+              CatalogList()
+            else
+              Center(
+                child: CircularProgressIndicator(),
+              )
+          ],
         ),
       ),
     ));
@@ -61,6 +68,26 @@ class CatalogHeader extends StatelessWidget {
 class CatalogList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container();
+    return ListView.builder(
+      itemCount: CatalogModel.items.length,
+      itemBuilder: (context, index) {
+        final catalog = CatalogModel.items[index];
+        return CatalogItem(catalog: catalog);
+      },
+    );
+  }
+}
+
+class CatalogItems extends StatelessWidget {
+  final Item catalog;
+
+  const CatalogItems({
+    Key? key,
+    required this.catalog,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return VxBox().white.square(100).make();
   }
 }
