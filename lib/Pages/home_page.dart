@@ -78,10 +78,10 @@ class CatalogList extends StatelessWidget {
   }
 }
 
-class CatalogItems extends StatelessWidget {
+class CatalogItem extends StatelessWidget {
   final Item catalog;
 
-  const CatalogItems({
+  const CatalogItem({
     Key? key,
     required this.catalog,
   }) : super(key: key);
