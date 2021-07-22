@@ -95,7 +95,7 @@ class CatalogItem extends StatelessWidget {
         children: [
           Image.network(
             catalog.image,
-          ).box.rounded.p8.color(MyTheme.creamColor).make().p24().w40(context)
+          ).box.rounded.p8.color(MyTheme.creamColor).make().p16().w32(context)
         ],
       ),
     ).white.rounded.square(130).make().py16();
