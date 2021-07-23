@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_app/Pages/home_detail_page.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:flutter_app/Pages/models/catalog.dart';
@@ -14,7 +15,18 @@ class CatalogList extends StatelessWidget {
       itemCount: CatalogModel.items.length,
       itemBuilder: (context, index) {
         final catalog = CatalogModel.items[index];
-        return CatalogItem(catalog: catalog);
+        return InkWell(
+          hoverColor: Color(0xfff5f5f5),
+          onTap: () => Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => HomeDetailPge(
+                catalog: catalog,
+              ),
+            ),
+          ),
+          child: CatalogItem(catalog: catalog),
+        );
       },
     );
   }
@@ -43,12 +55,12 @@ class CatalogItem extends StatelessWidget {
             children: [
               catalog.name.text.lg.color(MyTheme.darkBluishColor).bold.make(),
               catalog.desc.text.size(14).make(),
-              10.heightBox,
+              20.heightBox,
               ButtonBar(
                 alignment: MainAxisAlignment.spaceBetween,
                 buttonPadding: EdgeInsets.zero,
                 children: [
-                  "\$${catalog.price}".text.extraBold.make(),
+                  "\$${catalog.price}".text.extraBold.minFontSize(15).make(),
                   ElevatedButton(
                       onPressed: () {},
                       style: ButtonStyle(
@@ -57,7 +69,7 @@ class CatalogItem extends StatelessWidget {
                           shape: MaterialStateProperty.all(StadiumBorder())),
                       child: "Buy".text.make())
                 ],
-              ).pOnly(right: 8.0)
+              ).pOnly(right: 15.0)
             ],
           ))
         ],
