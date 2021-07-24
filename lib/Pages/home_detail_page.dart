@@ -10,8 +10,11 @@ class HomeDetailPge extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var captionStyle = context.captionStyle;
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+      ),
       backgroundColor: MyTheme.creamColor,
       bottomNavigationBar: Container(
         color: Colors.white,
@@ -29,8 +32,8 @@ class HomeDetailPge extends StatelessWidget {
                   StadiumBorder(),
                 ),
               ),
-              child: "Buy".text.make(),
-            ).wh(100, 50)
+              child: "add to cart".text.make(),
+            ).wh(120, 50)
           ],
         ).p32(),
       ),
@@ -41,7 +44,7 @@ class HomeDetailPge extends StatelessWidget {
             Hero(
               tag: Key(catalog.id.toString()),
               child: Image.network(catalog.image),
-            ).h32(context),
+            ).h24(context),
             Expanded(
               child: VxArc(
                 height: 30.0,
@@ -56,7 +59,12 @@ class HomeDetailPge extends StatelessWidget {
                           .color(MyTheme.darkBluishColor)
                           .bold
                           .make(),
-                      catalog.desc.text.size(14).xl.make(),
+                      catalog.desc.text.xl.textStyle(captionStyle!).make().p4(),
+                      "Vero stet ea clita eos invidunt nonumy sed. Vero stet ea clita eos invidunt nonumy sed Vero stet ea clita eos invidunt nonumy sed magna stet sanctus ea et, kasd est ut duo sadipscing tempor dolore elitr labore, kasd magna tempor justo takimata est amet ipsum, aliquyam et eos sit stet. Aliquyam clita."
+                          .text
+                          .textStyle(captionStyle)
+                          .make()
+                          .p16()
                     ],
                   ).py64(),
                 ),
