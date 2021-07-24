@@ -6,6 +6,10 @@ class MyTheme {
   static ThemeData lightTheme(BuildContext context) => ThemeData(
       primarySwatch: Colors.deepPurple,
       fontFamily: GoogleFonts.aBeeZee().fontFamily,
+      cardColor: Colors.white,
+      canvasColor: creamColor,
+      buttonColor: darkBluishColor,
+      accentColor: darkBluishColor,
       appBarTheme: AppBarTheme(
         color: Colors.white,
         elevation: 0,
@@ -17,6 +21,10 @@ class MyTheme {
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
       fontFamily: GoogleFonts.aBeeZee().fontFamily,
+      cardColor: Colors.black,
+      canvasColor: darkCreamColor,
+      buttonColor: lightBluishColor,
+      accentColor: Colors.white,
       appBarTheme: AppBarTheme(
         color: Colors.black,
         elevation: 0,
@@ -28,7 +36,7 @@ class MyTheme {
 
   //colors
   static Color creamColor = Color(0xfff5f5f5);
-  static Color darkCreamColor = Vx.gray800;
+  static Color darkCreamColor = Vx.gray900;
   static Color darkBluishColor = Color(0xff403b58);
-  static Color lightBluishColor = Vx.purple400;
+  static Color lightBluishColor = Vx.indigo500;
 }
