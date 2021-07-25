@@ -20,6 +20,7 @@ class MyTheme {
       ));
 
   static ThemeData darkTheme(BuildContext context) => ThemeData(
+      brightness: Brightness.dark,
       fontFamily: GoogleFonts.aBeeZee().fontFamily,
       cardColor: Colors.black,
       canvasColor: darkCreamColor,
@@ -29,7 +30,7 @@ class MyTheme {
         color: Colors.black,
         elevation: 0,
         iconTheme: IconThemeData(
-          color: Colors.black,
+          color: Colors.white,
         ),
         textTheme: Theme.of(context).textTheme,
       ));
