@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_app/Pages/models/catalog.dart';
-import 'package:flutter_app/widge/theme.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 class HomeDetailPge extends StatelessWidget {

@@ -9,7 +9,6 @@ import 'package:flutter_app/widge/home_widget/catalog_list.dart';
 import 'package:velocity_x/velocity_x.dart';
 
 import 'package:flutter_app/Pages/models/catalog.dart';
-import 'package:flutter_app/widge/theme.dart';
 
 class Homepage extends StatefulWidget {
   @override
