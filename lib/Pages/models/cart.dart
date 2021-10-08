@@ -1,6 +1,6 @@
 import 'package:flutter_app/Pages/models/catalog.dart';
 
-class CardModel {
+class CartModel {
   //catalog field
   late CatalogModel _catalog;
 
